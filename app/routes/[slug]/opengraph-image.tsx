@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 import { getArabicFont } from "@/lib/fonts"
 
-export const runtime = "edge"
+export const runtime = "nodejs"
 export const alt = "رحلات النقل البري"
 export const size = {
   width: 1200,
@@ -9,10 +9,13 @@ export const size = {
 }
 export const contentType = "image/png"
 
-export default async function Image({ params }: { params: { slug: string } }) {
+export default async function Image(props: { params: Promise<{ slug: string }> | { slug: string } }) {
+  const params = await props.params
+  const slug = params.slug || ""
+
   const cairoFont = await getArabicFont()
 
-  const [fromEng, toEng] = params.slug.split("-to-")
+  const [fromEng, toEng] = slug.split("-to-")
 
   const cityMap: Record<string, string> = {
     sanaa: "صنعاء",
@@ -34,6 +37,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
 
   const fromCity = cityMap[fromEng] || fromEng
   const toCity = cityMap[toEng] || toEng
+
+  const rtl = (text: string) => text.split(" ").reverse().join(" ")
 
   return new ImageResponse(
     (
@@ -86,7 +91,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               backgroundColor: "rgba(59, 130, 246, 0.1)",
             }}
           >
-            بوابة حجز النقل البري
+            {rtl("تذكرة سفر")}
           </div>
           
           <div
@@ -100,10 +105,10 @@ export default async function Image({ params }: { params: { slug: string } }) {
               gap: "24px",
             }}
           >
-            <span style={{ color: "white" }}>من</span>
-            <span style={{ color: "#fbbf24" }}>{fromCity}</span>
-            <span style={{ color: "white" }}>إلى</span>
-            <span style={{ color: "#fbbf24" }}>{toCity}</span>
+            <span style={{ color: "white" }}>{rtl("من")}</span>
+            <span style={{ color: "#fbbf24" }}>{rtl(fromCity)}</span>
+            <span style={{ color: "white" }}>{rtl("إلى")}</span>
+            <span style={{ color: "#fbbf24" }}>{rtl(toCity)}</span>
           </div>
 
           <div
@@ -116,11 +121,11 @@ export default async function Image({ params }: { params: { slug: string } }) {
               gap: "30px",
             }}
           >
-            <span>أفضل الأسعار</span>
+            <span>{rtl("أفضل الأسعار")}</span>
             <span style={{ color: "#3b82f6" }}>•</span>
-            <span>حجز فوري</span>
+            <span>{rtl("حجز فوري")}</span>
             <span style={{ color: "#3b82f6" }}>•</span>
-            <span>شركات معتمدة</span>
+            <span>{rtl("شركات معتمدة")}</span>
           </div>
         </div>
       </div>

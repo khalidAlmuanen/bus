@@ -15,6 +15,8 @@ import {
   Building2,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { BookNowButton } from "@/components/book-now-button"
+import { ShareTrip } from "@/components/share-trip"
 import type { Trip, SiteSettings, Company } from "@/lib/types"
 import { buildWhatsappUrl, sendNotification } from "@/lib/data"
 
@@ -176,8 +178,7 @@ function TripCard({
   company?: Company
 }) {
   const total = Number(trip.price) * Number(passengers || 1)
-  const whatsappText = `السلام عليكم، أرغب في حجز ${passengers || 1} مقعد على رحلة ${trip.from_city} إلى ${trip.to_city} - ${trip.departure_time}`
-  const waUrl = buildWhatsappUrl(settings.whatsapp, whatsappText)
+  const waUrl = buildWhatsappUrl(settings.whatsapp, `السلام عليكم، أرغب في حجز ${passengers || 1} مقعد على رحلة ${trip.from_city} إلى ${trip.to_city} - ${trip.departure_time}`)
 
   const currencyLabel = trip.currency === "SAR" ? "ر.س" : "ر.ي"
 
@@ -234,9 +235,9 @@ function TripCard({
                   strokeWidth="1.5"
                   strokeDasharray="2 2"
                 />
-                <circle cx="2" cy="5" r="2" fill="currentColor" />
+                <circle cx="62" cy="5" r="2" fill="currentColor" />
                 <path
-                  d="M62 5 L58 2 M62 5 L58 8"
+                  d="M2 5 L6 2 M2 5 L6 8"
                   stroke="currentColor"
                   strokeWidth="1.5"
                   fill="none"
@@ -297,20 +298,33 @@ function TripCard({
               )}
             </div>
           </div>
-          <Button
-            asChild
-            size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold gap-2 md:min-w-[180px]"
-          >
-            <a 
-              href={waUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="h-4 w-4" />
-              احجز الآن
-            </a>
-          </Button>
+          <div className="flex items-center gap-2">
+            {company ? (
+              <BookNowButton
+                trip={trip}
+                company={company}
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold gap-2 md:min-w-[180px]"
+              />
+            ) : (
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold gap-2 md:min-w-[180px]"
+              >
+                <a href={waUrl} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-4 w-4" />
+                  احجز الآن
+                </a>
+              </Button>
+            )}
+            <ShareTrip
+              fromCity={trip.from_city}
+              toCity={trip.to_city}
+              price={trip.price}
+              company={company?.short_name}
+            />
+          </div>
         </div>
       </div>
     </article>

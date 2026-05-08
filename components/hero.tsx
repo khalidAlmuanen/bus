@@ -109,7 +109,7 @@ export function Hero({
                   <span className="font-display font-extrabold text-lg">{trip.from_city}</span>
                   <svg viewBox="0 0 40 12" className="h-3 w-10 text-primary flex-1">
                     <path
-                      d="M1 6 H35 M35 6 L31 2 M35 6 L31 10"
+                      d="M39 6 H5 M5 6 L9 2 M5 6 L9 10"
                       stroke="currentColor"
                       strokeWidth="1.5"
                       fill="none"

@@ -62,13 +62,13 @@ export default async function HomePage() {
       <SiteHeader settings={settings} />
       <main>
         <Hero cities={cities} settings={settings} featuredTrip={featuredTrips[0]} />
+        <PopularTrips trips={featuredTrips.length ? featuredTrips : allTrips} />
+        <HowItWorks />
+        <CompaniesShowcase companies={companies} />
         <CitiesMarquee trips={allTrips} />
         <TrustGuarantees />
-        <CompaniesShowcase companies={companies} />
-        <PopularTrips trips={featuredTrips.length ? featuredTrips : allTrips} />
         <Features features={features} />
         <FleetShowcase />
-        <HowItWorks />
         <StatsBand stats={stats} />
         <Testimonials testimonials={testimonials} settings={settings} />
         <FaqSection faqs={faqs} settings={settings} />

@@ -1,11 +1,10 @@
 // Business fallback data for Alkohali Bus Company.
-// The real source of truth is Supabase (site_settings / cities / trips ...).
-// These constants are only used on the client where a full DB fetch is unnecessary
+// These constants are used as the data source for the site.
 // (e.g. SiteHeader/WhatsAppFloat default contact info).
 
 export const COMPANY = {
-  name: "بوابة حجز النقل البري",
-  shortName: "بوابة الحجز",
+  name: "تذكرة سفر",
+  shortName: "تذكرة سفر",
   tagline: "مستقبل السفر البري بين اليمن والسعودية",
   phone: "+967 777 192 477",
   phoneRaw: "+967777192477",
@@ -26,7 +25,7 @@ export const SAUDI_CITIES = ["مكة المكرمة", "جدة", "الرياض"] 
 
 export function buildWhatsappUrl(whatsapp: string, text?: string) {
   const defaultText = "السلام عليكم، أرغب في حجز تذكرة"
-  const message = (text ?? defaultText) + "\n\n[المصدر: موقع بوابة حجز النقل البري]"
+  const message = (text ?? defaultText) + "\n\n[المصدر: موقع تذكرة سفر]"
   return `https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`
 }
 

@@ -108,7 +108,7 @@ export default async function RouteDetailsPage({
     description: `حجز رحلات النقل البري من ${fromCity.name} إلى ${toCity.name} بأفضل الأسعار.`,
     brand: {
       "@type": "Brand",
-      name: "بوابة حجز النقل البري"
+      name: "تذكرة سفر"
     },
     offers: {
       "@type": "AggregateOffer",

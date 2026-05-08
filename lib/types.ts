@@ -116,17 +116,33 @@ export type SiteSettings = {
   tiktok_url: string | null
 }
 
+export type BookingStatus = "new" | "contacted" | "confirmed" | "cancelled" | "completed"
+
 export type Booking = {
   id: string
+  reference: string
   full_name: string
   phone: string
   from_city: string
   to_city: string
+  company_id: string
+  company_name: string
+  company_color: string
+  trip_id: string
+  bus_type: string
+  departure_time: string
+  duration: string
   travel_date: string | null
   passengers: number
+  price_per_seat: number
+  currency: "SAR" | "YER"
+  total_price: number
+  commission: number
+  commission_status: "pending" | "earned" | "paid"
   notes: string | null
-  status: "new" | "contacted" | "confirmed" | "cancelled" | "completed"
+  status: BookingStatus
   created_at: string
+  updated_at: string
 }
 
 export type ContactMessage = {

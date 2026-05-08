@@ -8,10 +8,9 @@ import { CompanyAbout } from "@/components/company-about"
 import { CompanyGallery } from "@/components/company-gallery"
 import { CompanyFleet } from "@/components/company-fleet"
 import { getCompanies, getCompanyBySlug, getTrips, getSettings } from "@/lib/queries"
-import { buildWhatsappUrl } from "@/lib/data"
 import type { Company, Trip } from "@/lib/types"
 import { Star, Clock, Users } from "lucide-react"
-import { ClientWhatsappButton } from "@/components/client-whatsapp-button"
+import { BookNowButton } from "@/components/book-now-button"
 
 export async function generateStaticParams() {
   const companies = await getCompanies()
@@ -123,10 +122,6 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
 
 function TripCard({ trip, company }: { trip: Trip; company: Company }) {
   const currencyLabel = trip.currency === "SAR" ? "ر.س" : "ر.ي"
-  const waUrl = buildWhatsappUrl(
-    company.whatsapp,
-    `السلام عليكم، أرغب في حجز مقعد على رحلة ${trip.from_city} إلى ${trip.to_city} - ${trip.departure_time}`
-  )
 
   return (
     <article className="group rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-premium transition-all overflow-hidden">
@@ -192,10 +187,10 @@ function TripCard({ trip, company }: { trip: Trip; company: Company }) {
               {trip.seats_available} مقعد متاح
             </div>
           </div>
-          <ClientWhatsappButton 
-            url={waUrl} 
-            text={`طلب حجز ${trip.from_city} إلى ${trip.to_city} - شركة ${company.short_name}`} 
-            color={company.color} 
+          <BookNowButton
+            trip={trip}
+            company={company}
+            size="lg"
           />
         </div>
       </div>

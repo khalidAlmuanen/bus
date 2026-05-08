@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og"
 import { getArabicFont } from "@/lib/fonts"
 import { getCompanyBySlug } from "@/lib/queries"
 
-export const runtime = "edge"
+export const runtime = "nodejs"
 export const alt = "حجز تذاكر باصات"
 export const size = {
   width: 1200,
@@ -10,12 +10,17 @@ export const size = {
 }
 export const contentType = "image/png"
 
-export default async function Image({ params }: { params: { slug: string } }) {
+export default async function Image(props: { params: Promise<{ slug: string }> | { slug: string } }) {
+  const params = await props.params
+  const slug = params.slug || ""
+  
   const cairoFont = await getArabicFont()
-  const company = await getCompanyBySlug(params.slug)
+  const company = await getCompanyBySlug(slug)
 
-  const companyName = company ? company.name : "بوابة حجز النقل البري"
+  const companyName = company ? company.name : "تذكرة سفر"
   const color = company ? company.color : "#3b82f6"
+
+  const rtl = (text: string) => text.split(" ").reverse().join(" ")
 
   return new ImageResponse(
     (
@@ -68,7 +73,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               backgroundColor: "rgba(251, 191, 36, 0.1)",
             }}
           >
-            وكيل معتمد للحجز
+            {rtl("وكيل معتمد للحجز")}
           </div>
           
           <div
@@ -82,7 +87,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               textAlign: "center",
             }}
           >
-            {companyName}
+            {rtl(companyName)}
           </div>
 
           <div
@@ -95,11 +100,11 @@ export default async function Image({ params }: { params: { slug: string } }) {
               gap: "30px",
             }}
           >
-            <span>احجز تذكرتك الآن</span>
+            <span>{rtl("احجز تذكرتك الآن")}</span>
             <span style={{ color }}>•</span>
-            <span>أسعار رسمية</span>
+            <span>{rtl("أسعار رسمية")}</span>
             <span style={{ color }}>•</span>
-            <span>دفع آمن</span>
+            <span>{rtl("دفع آمن")}</span>
           </div>
         </div>
       </div>

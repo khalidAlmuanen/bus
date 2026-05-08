@@ -122,6 +122,7 @@ export function BookingSearch({
               type="button"
               onClick={swap}
               aria-label="تبديل"
+              suppressHydrationWarning
               className="h-10 w-10 rounded-full bg-secondary border border-border flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground hover:rotate-180 transition-all duration-300"
             >
               <ArrowLeftRight className="h-4 w-4" />
@@ -223,6 +224,7 @@ export function BookingSearch({
               <button
                 key={`${f}-${t}`}
                 type="button"
+                suppressHydrationWarning
                 onClick={() => {
                   setFrom(f)
                   setTo(t)

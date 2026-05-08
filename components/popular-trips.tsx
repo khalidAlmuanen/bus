@@ -63,14 +63,14 @@ export function PopularTrips({ trips }: { trips: Trip[] }) {
                   <div className="flex-shrink-0">
                     <svg viewBox="0 0 48 14" className="h-3.5 w-12 text-accent">
                       <path
-                        d="M2 7 H42 M42 7 L37 2 M42 7 L37 12"
+                        d="M46 7 H6 M6 7 L11 2 M6 7 L11 12"
                         stroke="currentColor"
                         strokeWidth="1.8"
                         fill="none"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
-                      <circle cx="2" cy="7" r="1.5" fill="currentColor" />
+                      <circle cx="46" cy="7" r="1.5" fill="currentColor" />
                     </svg>
                   </div>
                   <div className="min-w-0 text-right">

@@ -11,8 +11,8 @@ import type {
 
 const DEFAULT_SETTINGS: SiteSettings = {
   id: 1,
-  company_name: "بوابة حجز النقل البري",
-  short_name: "حجز الرحلات",
+  company_name: "تذكرة سفر",
+  short_name: "تذكرة سفر",
   tagline: "احجز رحلتك مع أفضل شركات النقل البري بين اليمن والسعودية",
   phone: "+967777192477",
   phone_raw: "+967777192477",
@@ -117,11 +117,11 @@ const COMPANIES: Company[] = [
   },
   {
     id: "3",
-    name: "شركة البراق",
-    short_name: "البراق",
-    slug: "albarraq",
+    name: "شركة المتصدر",
+    short_name: "المتصدر",
+    slug: "almutasaddir",
     description: "تغطي معظم المدن الرئيسية في البلدين عبر منفذ الوديعة. تركز على تقديم رحلات اقتصادية بأسعار تنافسية للمغتربين.",
-    about: "شركة البراق تهدف إلى تقديم خدمات نقل اقتصادية بأسعار تنافسية دون التضحية بالجودة. نركز على خدمة المغتربين ونوفر رحلات مريحة وآمنة بأسعار في متناول الجميع. عبر منفذ الوديعة، نربط معظم المدن الرئيسية في اليمن والسعودية.",
+    about: "شركة المتصدر تهدف إلى تقديم خدمات نقل اقتصادية بأسعار تنافسية دون التضحية بالجودة. نركز على خدمة المغتربين ونوفر رحلات مريحة وآمنة بأسعار في متناول الجميع. عبر منفذ الوديعة، نربط معظم المدن الرئيسية في اليمن والسعودية.",
     coverage: "معظم المدن الرئيسية عبر منفذ الوديعة",
     features: ["أسعار اقتصادية", "منفذ الوديعة", "خدمة المغتربين"],
     amenities: [
@@ -136,9 +136,9 @@ const COMPANIES: Company[] = [
     logo: null,
     banner_image: null,
     gallery: [
-      { type: "image", url: "/images/companies/albarraq/bus-exterior-1.jpg", caption: "حافلة البراق من الخارج" },
-      { type: "image", url: "/images/companies/albarraq/bus-interior-1.jpg", caption: "المقاعد من الداخل" },
-      { type: "image", url: "/images/companies/albarraq/bus-interior-2.jpg", caption: "المساحة الداخلية" },
+      { type: "image", url: "/images/companies/almutasaddir/bus-exterior-1.jpg", caption: "حافلة المتصدر من الخارج" },
+      { type: "image", url: "/images/companies/almutasaddir/bus-interior-1.jpg", caption: "المقاعد من الداخل" },
+      { type: "image", url: "/images/companies/almutasaddir/bus-interior-2.jpg", caption: "المساحة الداخلية" },
     ],
     fleet: [
       { id: "1", name: "هيونداي يوتون", type: "اقتصادي", capacity: 55, features: ["مقاعد مريحة", "تكييف", "شواحن"], image: null },
@@ -150,11 +150,11 @@ const COMPANIES: Company[] = [
   },
   {
     id: "4",
-    name: "شركة الأولى",
-    short_name: "الأولى",
-    slug: "alawla",
+    name: "شركة مشوار",
+    short_name: "مشوار",
+    slug: "mashwar",
     description: "رحلات يومية من جدة ومكة والرياض إلى مختلف محافظات اليمن. تشتهر بدقة المواعيد وتوفير حافلات مكيفة مريحة للمسافات الطويلة.",
-    about: "شركة الأولى تتميز بدقة المواعيد والالتزام بالجدول الزمني. نقدم رحلات يومية من المدن السعودية المقدسة إلى مختلف محافظات اليمن. حافلاتنا المكيفة المريحة تضمن لك تجربة سفر هادئة ومريحة للمسافات الطويلة.",
+    about: "شركة مشوار تتميز بدقة المواعيد والالتزام بالجدول الزمني. نقدم رحلات يومية من المدن السعودية المقدسة إلى مختلف محافظات اليمن. حافلاتنا المكيفة المريحة تضمن لك تجربة سفر هادئة ومريحة للمسافات الطويلة.",
     coverage: "جدة، مكة، الرياض → محافظات اليمن",
     features: ["دقة المواعيد", "حافلات مكيفة", "رحلات يومية"],
     amenities: [
@@ -169,9 +169,9 @@ const COMPANIES: Company[] = [
     logo: null,
     banner_image: null,
     gallery: [
-      { type: "image", url: "/images/companies/alawla/bus-exterior-1.jpg", caption: "حافلة الأولى من الخارج" },
-      { type: "image", url: "/images/companies/alawla/bus-interior-1.jpg", caption: "المقاعد المريحة" },
-      { type: "image", url: "/images/companies/alawla/bus-interior-2.jpg", caption: "نظام التكييف" },
+      { type: "image", url: "/images/companies/mashwar/bus-exterior-1.jpg", caption: "حافلة مشوار من الخارج" },
+      { type: "image", url: "/images/companies/mashwar/bus-interior-1.jpg", caption: "المقاعد المريحة" },
+      { type: "image", url: "/images/companies/mashwar/bus-interior-2.jpg", caption: "نظام التكييف" },
     ],
     fleet: [
       { id: "1", name: "سيتارو", type: "مريحة", capacity: 50, features: ["مقاعد واسعة", "تكييف قوي", "واي فاي"], image: null },
@@ -183,11 +183,11 @@ const COMPANIES: Company[] = [
   },
   {
     id: "5",
-    name: "شركة الوسيط",
-    short_name: "الوسيط",
-    slug: "alwaseet",
+    name: "شركة المتحدة",
+    short_name: "المتحدة",
+    slug: "almuttahida",
     description: "متخصصة في خطوط النقل بين المنطقة الشرقية بالسعودية واليمن. تقدم خدمات نقل الركاب وشحن الطرود والرسائل البريدية.",
-    about: "شركة الوسيط متخصصة في خطوط النقل بين المنطقة الشرقية بالسعودية واليمن. نقدم خدمات متكاملة تشمل نقل الركاب وشحن الطرود والرسائل البريدية. نحن حل الوسيط الموثوق لنقل كل ما تحتاجه بين البلدين.",
+    about: "شركة المتحدة متخصصة في خطوط النقل بين المنطقة الشرقية بالسعودية واليمن. نقدم خدمات متكاملة تشمل نقل الركاب وشحن الطرود والرسائل البريدية. نحن الحل الموثوق لنقل كل ما تحتاجه بين البلدين.",
     coverage: "المنطقة الشرقية السعودية ↔ اليمن",
     features: ["نقل الركاب", "شحن الطرود", "الرسائل البريدية"],
     amenities: [
@@ -202,9 +202,9 @@ const COMPANIES: Company[] = [
     logo: null,
     banner_image: null,
     gallery: [
-      { type: "image", url: "/images/companies/alwaseet/bus-exterior-1.jpg", caption: "حافلة الوسيط من الخارج" },
-      { type: "image", url: "/images/companies/alwaseet/bus-interior-1.jpg", caption: "المقاعد من الداخل" },
-      { type: "image", url: "/images/companies/alwaseet/cargo-1.jpg", caption: "قسم الشحن" },
+      { type: "image", url: "/images/companies/almuttahida/bus-exterior-1.jpg", caption: "حافلة المتحدة من الخارج" },
+      { type: "image", url: "/images/companies/almuttahida/bus-interior-1.jpg", caption: "المقاعد من الداخل" },
+      { type: "image", url: "/images/companies/almuttahida/cargo-1.jpg", caption: "قسم الشحن" },
     ],
     fleet: [
       { id: "1", name: "سيتارو ركاب", type: "ركاب", capacity: 50, features: ["مقاعد مريحة", "تكييف", "واي فاي"], image: null },
@@ -216,11 +216,11 @@ const COMPANIES: Company[] = [
   },
   {
     id: "6",
-    name: "شركة النور",
-    short_name: "النور",
-    slug: "alnoor",
+    name: "شركة الريادة",
+    short_name: "الريادة",
+    slug: "alriyada",
     description: "سرحلات تنطلق من المدينة المنورة وتبوك وصولاً إلى جنوب اليمن. توفر خيارات مرنة للحجز وتتميز بخدمة العملاء عبر الواتساب.",
-    about: "شركة النور تقدم رحلات من المدينة المنورة وتبوك إلى جنوب اليمن. نتميز بخدمة عملاء ممتازة عبر الواتساب وخيارات مرنة للحجز. نحرص على راحة المسافرين ونقدم تجربة سفر مريحة مع خدمة عملاء على مدار الساعة.",
+    about: "شركة الريادة تقدم رحلات من المدينة المنورة وتبوك إلى جنوب اليمن. نتميز بخدمة عملاء ممتازة عبر الواتساب وخيارات مرنة للحجز. نحرص على راحة المسافرين ونقدم تجربة سفر مريحة مع خدمة عملاء على مدار الساعة.",
     coverage: "المدينة المنورة، تبوك → جنوب اليمن",
     features: ["حجز مرن", "خدمة واتساب", "المدينة المنورة"],
     amenities: [
@@ -235,9 +235,9 @@ const COMPANIES: Company[] = [
     logo: null,
     banner_image: null,
     gallery: [
-      { type: "image", url: "/images/companies/alnoor/bus-exterior-1.jpg", caption: "حافلة النور من الخارج" },
-      { type: "image", url: "/images/companies/alnoor/bus-interior-1.jpg", caption: "المقاعد من الداخل" },
-      { type: "image", url: "/images/companies/alnoor/service-1.jpg", caption: "خدمة العملاء" },
+      { type: "image", url: "/images/companies/alriyada/bus-exterior-1.jpg", caption: "حافلة الريادة من الخارج" },
+      { type: "image", url: "/images/companies/alriyada/bus-interior-1.jpg", caption: "المقاعد من الداخل" },
+      { type: "image", url: "/images/companies/alriyada/service-1.jpg", caption: "خدمة العملاء" },
     ],
     fleet: [
       { id: "1", name: "سيتارو", type: "مريحة", capacity: 50, features: ["مقاعد مريحة", "تكييف", "واي فاي"], image: null },
@@ -246,41 +246,6 @@ const COMPANIES: Company[] = [
     color: "#059669",
     is_active: true,
     sort_order: 6,
-  },
-  {
-    id: "7",
-    name: "شركة راحة",
-    short_name: "راحة",
-    slug: "raha",
-    description: "تغطي الخطوط الدولية وتركز على جودة الخدمة داخل الحافلة. توفر خدمات إضافية مثل الوجبات الخفيفة وشاشات الترفيه في بعض الرحلات.",
-    about: "شركة راحة تركز على جودة الخدمة داخل الحافلة لتقديم تجربة سرف فاخرة. نوفر خدمات إضافية مثل الوجبات الخفيفة وشاشات الترفيه في بعض الرحلات. هدفنا هو راحة المسافرين وضمان رحلة ممتعة من البداية للنهاية.",
-    coverage: "الخطوط الدولية",
-    features: ["وجبات خفيفة", "شاشات ترفيه", "جودة عالية"],
-    amenities: [
-      { icon: "Utensils", label: "وجبات خفيفة", description: "وجبات ومشروبات متنوعة" },
-      { icon: "Tv", label: "شاشات ترفيه", description: "شاشات HD مع مكتبة أفلام" },
-      { icon: "Armchair", label: "مقاعد فاخرة", description: "مقاعد قابلة للطي بزاوية 170 درجة" },
-      { icon: "Wind", label: "تكييف مزدوج", description: "تكييف منفصل لكل مقعد" },
-      { icon: "Wifi", label: "واي فاي فائق السرعة", description: "إنترنت عالي السرعة" },
-      { icon: "Coffee", label: "قهوة وشراب", description: "خدمة قهوة ومشروبات ساخنة" },
-    ],
-    phone: "+967777192477",
-    whatsapp: "967777192477",
-    logo: null,
-    banner_image: null,
-    gallery: [
-      { type: "image", url: "/images/companies/raha/bus-exterior-1.jpg", caption: "حافلة راحة من الخارج" },
-      { type: "image", url: "/images/companies/raha/bus-interior-1.jpg", caption: "المقاعد الفاخرة" },
-      { type: "image", url: "/images/companies/raha/bus-interior-2.jpg", caption: "شاشات الترفيه" },
-      { type: "video", url: "https://www.youtube.com/embed/dQw4w9WgXcQ", thumbnail: "/images/companies/raha/video-thumb.jpg", caption: "جولة في حافلة راحة" },
-    ],
-    fleet: [
-      { id: "1", name: "سيتارو 17 VIP", type: "فاخرة جداً", capacity: 44, features: ["مقاعد 170 درجة", "شاشات HD", "وجبات"], image: null },
-      { id: "2", name: "مرسيدس-بنز تريديك", type: "فاخرة", capacity: 46, features: ["مقاعد فاخرة", "تكييف مزدوج", "قهوة"], image: null },
-    ],
-    color: "#0891b2",
-    is_active: true,
-    sort_order: 7,
   },
 ]
 
@@ -303,7 +268,7 @@ const TRIPS: Trip[] = [
   { id: "13", company_id: "2", from_city: "الدمام", to_city: "تعز", direction: "saudi-to-yemen", duration: "32 ساعة", departure_time: "04:00 مساءً", price: 400, currency: "SAR", bus_type: "VIP مريح", seats_available: 50, featured: false, is_active: true, sort_order: 13 },
   { id: "14", company_id: "2", from_city: "الرياض", to_city: "عدن", direction: "saudi-to-yemen", duration: "24 ساعة", departure_time: "06:00 مساءً", price: 360, currency: "SAR", bus_type: "VIP درجة أولى", seats_available: 50, featured: true, is_active: true, sort_order: 14 },
 
-  // شركة البراق (3)
+  // شركة المتصدر (3)
   { id: "15", company_id: "3", from_city: "صنعاء", to_city: "الرياض", direction: "yemen-to-saudi", duration: "28 ساعة", departure_time: "09:00 صباحاً", price: 280, currency: "SAR", bus_type: "اقتصادي", seats_available: 55, featured: true, is_active: true, sort_order: 15 },
   { id: "16", company_id: "3", from_city: "تعز", to_city: "جدة", direction: "yemen-to-saudi", duration: "32 ساعة", departure_time: "10:00 صباحاً", price: 280, currency: "SAR", bus_type: "اقتصادي", seats_available: 55, featured: true, is_active: true, sort_order: 16 },
   { id: "17", company_id: "3", from_city: "إب", to_city: "الرياض", direction: "yemen-to-saudi", duration: "30 ساعة", departure_time: "08:00 صباحاً", price: 290, currency: "SAR", bus_type: "اقتصادي", seats_available: 55, featured: false, is_active: true, sort_order: 17 },
@@ -311,7 +276,7 @@ const TRIPS: Trip[] = [
   { id: "19", company_id: "3", from_city: "جدة", to_city: "تعز", direction: "saudi-to-yemen", duration: "32 ساعة", departure_time: "06:00 مساءً", price: 280, currency: "SAR", bus_type: "اقتصادي", seats_available: 55, featured: true, is_active: true, sort_order: 19 },
   { id: "20", company_id: "3", from_city: "الرياض", to_city: "إب", direction: "saudi-to-yemen", duration: "30 ساعة", departure_time: "04:00 مساءً", price: 290, currency: "SAR", bus_type: "اقتصادي", seats_available: 55, featured: false, is_active: true, sort_order: 20 },
 
-  // شركة الأولى (4)
+  // شركة مشوار (4)
   { id: "21", company_id: "4", from_city: "صنعاء", to_city: "مكة المكرمة", direction: "yemen-to-saudi", duration: "26 ساعة", departure_time: "07:00 صباحاً", price: 360, currency: "SAR", bus_type: "VIP مريح", seats_available: 48, featured: true, is_active: true, sort_order: 21 },
   { id: "22", company_id: "4", from_city: "تعز", to_city: "مكة المكرمة", direction: "yemen-to-saudi", duration: "30 ساعة", departure_time: "09:00 صباحاً", price: 360, currency: "SAR", bus_type: "VIP مريح", seats_available: 48, featured: true, is_active: true, sort_order: 22 },
   { id: "23", company_id: "4", from_city: "إب", to_city: "مكة المكرمة", direction: "yemen-to-saudi", duration: "28 ساعة", departure_time: "08:30 صباحاً", price: 360, currency: "SAR", bus_type: "VIP مريح", seats_available: 48, featured: false, is_active: true, sort_order: 23 },
@@ -319,25 +284,18 @@ const TRIPS: Trip[] = [
   { id: "25", company_id: "4", from_city: "مكة المكرمة", to_city: "تعز", direction: "saudi-to-yemen", duration: "30 ساعة", departure_time: "05:00 مساءً", price: 360, currency: "SAR", bus_type: "VIP مريح", seats_available: 48, featured: true, is_active: true, sort_order: 25 },
   { id: "26", company_id: "4", from_city: "مكة المكرمة", to_city: "إب", direction: "saudi-to-yemen", duration: "28 ساعة", departure_time: "06:30 مساءً", price: 360, currency: "SAR", bus_type: "VIP مريح", seats_available: 48, featured: false, is_active: true, sort_order: 26 },
 
-  // شركة الوسيط (5)
+  // شركة المتحدة (5)
   { id: "27", company_id: "5", from_city: "المكلا", to_city: "الدمام", direction: "yemen-to-saudi", duration: "18 ساعة", departure_time: "04:00 عصراً", price: 300, currency: "SAR", bus_type: "VIP", seats_available: 45, featured: true, is_active: true, sort_order: 27 },
   { id: "28", company_id: "5", from_city: "المكلا", to_city: "الرياض", direction: "yemen-to-saudi", duration: "20 ساعة", departure_time: "05:00 عصراً", price: 300, currency: "SAR", bus_type: "VIP", seats_available: 45, featured: true, is_active: true, sort_order: 28 },
   { id: "29", company_id: "5", from_city: "الدمام", to_city: "المكلا", direction: "saudi-to-yemen", duration: "18 ساعة", departure_time: "08:00 صباحاً", price: 300, currency: "SAR", bus_type: "VIP", seats_available: 45, featured: true, is_active: true, sort_order: 29 },
   { id: "30", company_id: "5", from_city: "الرياض", to_city: "المكلا", direction: "saudi-to-yemen", duration: "20 ساعة", departure_time: "08:00 صباحاً", price: 300, currency: "SAR", bus_type: "VIP", seats_available: 45, featured: true, is_active: true, sort_order: 30 },
 
-  // شركة النور (6)
+  // شركة الريادة (6)
   { id: "31", company_id: "6", from_city: "المكلا", to_city: "المدينة المنورة", direction: "yemen-to-saudi", duration: "16 ساعة", departure_time: "06:00 صباحاً", price: 320, currency: "SAR", bus_type: "VIP مريح", seats_available: 42, featured: true, is_active: true, sort_order: 31 },
   { id: "32", company_id: "6", from_city: "المكلا", to_city: "تبوك", direction: "yemen-to-saudi", duration: "14 ساعة", departure_time: "07:00 صباحاً", price: 340, currency: "SAR", bus_type: "VIP مريح", seats_available: 42, featured: true, is_active: true, sort_order: 32 },
   { id: "33", company_id: "6", from_city: "المدينة المنورة", to_city: "المكلا", direction: "saudi-to-yemen", duration: "16 ساعة", departure_time: "09:00 مساءً", price: 320, currency: "SAR", bus_type: "VIP مريح", seats_available: 42, featured: true, is_active: true, sort_order: 33 },
   { id: "34", company_id: "6", from_city: "تبوك", to_city: "المكلا", direction: "saudi-to-yemen", duration: "14 ساعة", departure_time: "10:00 مساءً", price: 340, currency: "SAR", bus_type: "VIP مريح", seats_available: 42, featured: true, is_active: true, sort_order: 34 },
 
-  // شركة راحة (7)
-  { id: "35", company_id: "7", from_city: "صنعاء", to_city: "جدة", direction: "yemen-to-saudi", duration: "28 ساعة", departure_time: "08:00 صباحاً", price: 400, currency: "SAR", bus_type: "VIP فاخر", seats_available: 40, featured: true, is_active: true, sort_order: 35 },
-  { id: "36", company_id: "7", from_city: "تعز", to_city: "الرياض", direction: "yemen-to-saudi", duration: "28 ساعة", departure_time: "06:30 صباحاً", price: 400, currency: "SAR", bus_type: "VIP فاخر", seats_available: 40, featured: true, is_active: true, sort_order: 36 },
-  { id: "37", company_id: "7", from_city: "إب", to_city: "جدة", direction: "yemen-to-saudi", duration: "30 ساعة", departure_time: "07:30 صباحاً", price: 400, currency: "SAR", bus_type: "VIP فاخر", seats_available: 40, featured: false, is_active: true, sort_order: 37 },
-  { id: "38", company_id: "7", from_city: "جدة", to_city: "صنعاء", direction: "saudi-to-yemen", duration: "28 ساعة", departure_time: "06:00 مساءً", price: 400, currency: "SAR", bus_type: "VIP فاخر", seats_available: 40, featured: true, is_active: true, sort_order: 38 },
-  { id: "39", company_id: "7", from_city: "الرياض", to_city: "تعز", direction: "saudi-to-yemen", duration: "28 ساعة", departure_time: "02:30 عصراً", price: 400, currency: "SAR", bus_type: "VIP فاخر", seats_available: 40, featured: true, is_active: true, sort_order: 39 },
-  { id: "40", company_id: "7", from_city: "جدة", to_city: "إب", direction: "saudi-to-yemen", duration: "30 ساعة", departure_time: "07:30 مساءً", price: 400, currency: "SAR", bus_type: "VIP فاخر", seats_available: 40, featured: false, is_active: true, sort_order: 40 },
 ]
 
 const FEATURES: Feature[] = [

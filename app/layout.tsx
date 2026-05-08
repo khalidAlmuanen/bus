@@ -23,14 +23,14 @@ const siteUrl = "https://bus-booking.com"
 export const metadata: Metadata = {
   metadataBase: new URL("https://bus-booking-portal.vercel.app"),
   title: {
-    default: "بوابة حجز النقل البري | رحلات اليمن والسعودية",
-    template: "%s | بوابة حجز النقل البري",
+    default: "تذكرة سفر | رحلات اليمن والسعودية",
+    template: "%s | تذكرة سفر",
   },
   description:
-    "دليلك الأول لحجز رحلات النقل البري بين اليمن والسعودية. قارن الأسعار، واعرف المواعيد، واحجز تذكرتك عبر أفضل الشركات مثل البركة، البراق، الكاهلي، راحة والمزيد.",
+    "دليلك الأول لحجز رحلات النقل البري بين اليمن والسعودية. قارن الأسعار، واعرف المواعيد، واحجز تذكرتك عبر أفضل الشركات مثل الكاهلي، البركة، المتصدر، مشوار، المتحدة، الريادة والمزيد.",
   keywords: [
-    "شركة الأولى", "باصات الأولى",
-    "شركة الوسيط", "شركة النور", "شركة راحة",
+    "شركة مشوار", "باصات مشوار",
+    "شركة المتحدة", "شركة الريادة",
     
     // المدن والمسارات
     "حجز باص من صنعاء الى جدة", "باصات صنعاء الرياض", "باصات صنعاء مكة", "باصات صنعاء الدمام",
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     "تأشيرة زيارة عائلية باص", "سفر المغتربين اليمن", "باصات عمرة", "رحلات عمرة برية",
     "تخليص جمركي الوديعة", "استعلامات باصات اليمن", "مكاتب حجز باصات صنعاء"
   ],
-  applicationName: "بوابة حجز النقل البري",
-  authors: [{ name: "بوابة حجز النقل البري" }],
-  creator: "بوابة حجز النقل البري",
-  publisher: "بوابة حجز النقل البري",
+  applicationName: "تذكرة سفر",
+  authors: [{ name: "تذكرة سفر" }],
+  creator: "تذكرة سفر",
+  publisher: "تذكرة سفر",
   formatDetection: { telephone: true, email: true, address: true },
   alternates: {
     canonical: "/",
@@ -62,10 +62,10 @@ export const metadata: Metadata = {
     locale: "ar_YE",
     alternateLocale: ["ar_SA", "ar"],
     url: siteUrl,
-    siteName: "بوابة حجز النقل البري",
-    title: "بوابة حجز النقل البري | حجز رحلات اليمن - السعودية",
+    siteName: "تذكرة سفر",
+    title: "تذكرة سفر | حجز رحلات اليمن - السعودية",
     description:
-      "الحجز الذكي لأفضل باصات النقل البري بين اليمن والسعودية. مقارنة الأسعار، باصات VIP فاخرة، راحة، أمان، مواعيد دقيقة.",
+      "الحجز الذكي لأفضل باصات النقل البري بين اليمن والسعودية. مقارنة الأسعار، باصات VIP فاخرة، أمان، مواعيد دقيقة.",
     images: [
       {
         url: "/images/hero-bus.jpg",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "بوابة حجز النقل البري | حجز رحلات اليمن - السعودية",
+    title: "تذكرة سفر | حجز رحلات اليمن - السعودية",
     description: "مقارنة الأسعار، باصات VIP فاخرة، حجز سريع وآمن، خدمة 24/7.",
     images: ["/images/hero-bus.jpg"],
   },
@@ -93,7 +93,6 @@ export const metadata: Metadata = {
     },
   },
   category: "Travel",
-  generator: "v0.app",
   icons: {
     icon: [
       { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
@@ -102,6 +101,7 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
+  manifest: "/manifest.json",
 }
 
 export const viewport: Viewport = {
@@ -117,13 +117,13 @@ export const viewport: Viewport = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "بوابة حجز النقل البري",
+  name: "تذكرة سفر",
   alternateName: ["Bus Booking Portal", "Yemen Saudi Bus Booking"],
   url: siteUrl,
   logo: `${siteUrl}/icon.svg`,
   image: `${siteUrl}/images/hero-bus.jpg`,
   description:
-    "بوابة حجز النقل البري - خدمات حجز باصات VIP بين اليمن والمملكة العربية السعودية مع أفضل شركات النقل.",
+    "تذكرة سفر - خدمات حجز باصات VIP بين اليمن والمملكة العربية السعودية مع أفضل شركات النقل.",
   address: {
     "@type": "PostalAddress",
     addressCountry: ["YE", "SA"],
@@ -147,7 +147,7 @@ const organizationJsonLd = {
 const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
-  name: "بوابة حجز النقل البري",
+  name: "تذكرة سفر",
   url: siteUrl,
   telephone: "+967777192477",
   priceRange: "$$",
@@ -195,6 +195,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased leading-arabic" suppressHydrationWarning>
         <Suspense fallback={null}>{children}</Suspense>
+        <BookingNotifications />
         <GlobalClickTracker />
       </body>
     </html>

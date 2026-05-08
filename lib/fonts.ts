@@ -1,25 +1,13 @@
-export async function getArabicFont() {
-  const fontUrl = "https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap"
-  
-  // We spoof an old User-Agent to force Google Fonts to return a TTF file instead of WOFF2,
-  // because Satori (Next.js OG) requires TTF or OTF fonts.
-  const css = await fetch(fontUrl, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1",
-    },
-  }).then((res) => res.text())
+import { readFile } from "fs/promises"
+import { join } from "path"
 
-  const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/)
+let cachedFont: ArrayBuffer | null = null
 
-  if (!resource) {
-    throw new Error("Failed to extract font URL from Google Fonts CSS")
-  }
+export async function getArabicFont(): Promise<ArrayBuffer> {
+  if (cachedFont) return cachedFont
 
-  const res = await fetch(resource[1])
-  if (!res.ok) {
-    throw new Error("Failed to download font file")
-  }
-
-  return await res.arrayBuffer()
+  const fontPath = join(process.cwd(), "public", "Cairo-Bold.ttf")
+  const buffer = await readFile(fontPath)
+  cachedFont = buffer.buffer as ArrayBuffer
+  return cachedFont
 }
