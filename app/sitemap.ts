@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next'
-import { getCompanies, getCities } from '@/lib/queries'
+import { getCompanies, getCities, getTrips } from '@/lib/queries'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://alkohali-bus.com'
 
-  const [companies, cities] = await Promise.all([
+  const [companies, cities, trips] = await Promise.all([
     getCompanies(),
     getCities(),
+    getTrips(),
   ])
 
   const sitemapEntries: MetadataRoute.Sitemap = [
@@ -83,6 +84,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: 'daily',
         priority: 0.8,
       })
+    })
+  })
+
+  // Add all individual trip pages (Programmatic SEO for Long-Tail Keywords)
+  trips.forEach((trip) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/trips/${trip.id}`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
     })
   })
 
