@@ -3,7 +3,7 @@ import { Cairo, Tajawal } from "next/font/google"
 import { Suspense } from "react"
 import "./globals.css"
 import { GlobalClickTracker } from "@/components/global-click-tracker"
-
+import { BookingNotifications } from "@/components/booking-notifications"
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
   weight: ["400", "500", "700", "800"],
