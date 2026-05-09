@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Cairo, Tajawal } from "next/font/google"
 import { Suspense } from "react"
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css"
 import { GlobalClickTracker } from "@/components/global-click-tracker"
 import { BookingNotifications } from "@/components/booking-notifications"
@@ -195,6 +196,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased leading-arabic" suppressHydrationWarning>
         <Suspense fallback={null}>{children}</Suspense>
+        <Analytics />
         <BookingNotifications />
         <GlobalClickTracker />
       </body>

@@ -120,7 +120,7 @@ export function BookingModal({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md overflow-y-auto max-h-[90vh]">
+      <DialogContent className="sm:max-w-md overflow-y-auto max-h-[85dvh] p-4 sm:p-6">
         {step === "form" && (
           <>
             <DialogHeader>
@@ -134,7 +134,7 @@ export function BookingModal({
             </DialogHeader>
 
             {/* Trip Summary Card */}
-            <div className="rounded-xl bg-secondary/60 border border-border p-4 space-y-3">
+            <div className="rounded-xl bg-secondary/60 border border-border p-3 sm:p-4 space-y-2 sm:space-y-3">
               <div className="flex items-center gap-2">
                 <span
                   className="inline-flex items-center gap-1 rounded-full text-[11px] font-black px-2.5 py-1"
@@ -182,8 +182,8 @@ export function BookingModal({
             </div>
 
             {/* Booking Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                 <div className="col-span-2">
                   <Label htmlFor="full_name" className="font-semibold mb-1.5 block text-sm">
                     الاسم الكامل
@@ -193,7 +193,7 @@ export function BookingModal({
                     name="full_name"
                     required
                     placeholder="اكتب اسمك الكامل"
-                    className="h-11"
+                    className="h-10 sm:h-11"
                   />
                 </div>
                 <div>
@@ -207,7 +207,7 @@ export function BookingModal({
                     type="tel"
                     placeholder="+967 ..."
                     dir="ltr"
-                    className="h-11"
+                    className="h-10 sm:h-11"
                   />
                 </div>
                 <div>
@@ -222,7 +222,7 @@ export function BookingModal({
                     max={trip.seats_available}
                     defaultValue={1}
                     required
-                    className="h-11"
+                    className="h-10 sm:h-11"
                   />
                 </div>
                 <div className="col-span-2">
@@ -233,7 +233,7 @@ export function BookingModal({
                     id="travel_date"
                     name="travel_date"
                     type="date"
-                    className="h-11"
+                    className="h-10 sm:h-11"
                   />
                 </div>
                 <div className="col-span-2">
