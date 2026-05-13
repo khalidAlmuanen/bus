@@ -19,10 +19,10 @@ const cairo = Cairo({
   display: "swap",
 })
 
-const siteUrl = "https://bus-booking.com"
+const siteUrl = "https://alkohali-bus.com"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bus-booking-portal.vercel.app"),
+  metadataBase: new URL("https://alkohali-bus.com"),
   title: {
     default: "تذكرة سفر | رحلات اليمن والسعودية",
     template: "%s | تذكرة سفر",
